@@ -1,0 +1,141 @@
+* {
+  /* border: solid 1px grey; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  color: whitesmoke;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+html {
+  font-size: calc(12px + (24 - 12) * ((100vw - 200px) / (1024 - 200)));
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+body {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #7ab1c7;
+}
+
+li {
+  font-size: 1rem;
+}
+
+.contenedorApp {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.cabeza {
+  background-color: #4717f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10vh;
+  justify-content: space-around;
+  font-size: 2rem;
+  font-family: "Lucida Console";
+  padding: 3vh;
+}
+
+.divBuscador{
+  width: 80%;
+}
+
+.divBuscador input{
+  width: 100%;
+  height: 5vh;
+  color: black;
+}
+
+.pie {
+  background-color: #4717f6;
+  border-top: grey solid 1px;
+  min-height: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 2vh;
+}
+
+.contenedorMain {
+  background-color: indigo;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Monospace"
+}
+
+.divEstrenosRecomendadas {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4vh;
+  width: 100%;
+  text-align: center;
+}
+
+.divEstrenosRecomendadas a{
+  font-size: 1.4rem;
+}
+
+.divTodas {
+  text-align: center;
+}
+
+.parrafoTodas {
+  font-size: 1.3rem;
+  padding: 2vh;
+}
+
+.divTodas a{
+  border: solid 1px grey;
+  padding: 2vh;
+
+}
+
+.divEstrenos {
+  padding: 2vh;
+  border: solid 1px grey;
+  width:50%;
+}
+
+.divRecomendadas{
+  padding: 2vh;
+  border: solid 1px grey;
+  width:50%;
+}
+
+a:hover{
+  color: whitesmoke;
+  transition: .3s all;
+}
+
+
+@media (min-width: 900px){
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+}
+
+.contenedorMain {
+  min-height: 60vh;
+}
+
+}

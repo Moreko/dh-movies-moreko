@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DH Movies Juan Moreno</title>
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+  <link rel="icon" type="image/ico" href="/favicon.ico">
+</head>
+<body>
+  
+  <section  class="contenedorApp">
+    <%-include('./partials/header.ejs')%>
+    
+    <main class="contenedorMain">
+      
+      <div class="divTodas">
+          <div class="parrafoTodas">
+            <p>Bienvenidos a DH Movies! En esta página encontrarás información sobre estrenos y clásicos del cine a nivel mundial, para todo tipo de gusto. </p>
+        </div>
+        <br>
+        <br>
+        <a href="/peliculas">Todas las peliculas</a>
+      </div>
+
+      <div class="divEstrenosRecomendadas">
+
+        <div class="divEstrenos">
+          <a href="/peliculas/new">Estrenos</a>
+        </div>
+
+        <div class="divRecomendadas">
+          <a href="/peliculas/recomendadas">Recomendadas</a>
+        </div>
+
+      </div>
+
+    </main>
+      
+     <%-include('./partials/footer.ejs')%>
+  </section>
+    
+  </body>
+  
+  </html>
+  

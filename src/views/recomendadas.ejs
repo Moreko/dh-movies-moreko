@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH Movies Juan Moreno</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+  </head>
+  <body>
+
+    <section  class="contenedorApp">
+    <%-include('./partials/header.ejs')%>
+
+    <main class="contenedorMain">
+      
+    <ul> 
+        <% recomendadas.forEach(pelicula => { %>
+        <a href="/peliculas/<%= pelicula.id %>"><li><%= pelicula.title %></a></li>
+        <li>Rating: <%= pelicula.rating %>  </li>
+        <br>
+
+         <% }) %>
+    </ul>
+
+    <a href="/">Volver al inicio</a>
+
+    </main>
+
+    <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>

@@ -1,0 +1,6 @@
+Paleta:
+
+Negro: #0e0b16
+Fucsia: #a239ca o indigo
+Joya: #4717f6
+Crema: whitesmoke

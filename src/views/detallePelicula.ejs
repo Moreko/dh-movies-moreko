@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalle NOMBREPELI</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+
+    <section  class="contenedorApp">
+     <%-include('./partials/header.ejs')%>
+
+     <main class="contenedorMain">
+        
+        <h1><%= pelicula.title %> </h1>
+        <p>Rating: <%= pelicula.rating %> </p>
+        <p>Awards: <%= pelicula.awards %> </p>
+        <p>Estreno: <%= pelicula.release_date %> </p>
+        <p>Duración: <%= pelicula.length %> </p>
+
+        <a href="/">Volver al inicio</a>
+
+
+      </main>
+
+  <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>
