@@ -11,7 +11,9 @@ router.get('/recomendadas', moviesController.recomendadas);
 
 router.post('/search', moviesController.search);
 
-// router.get('/createForm', moviesController.createForm);
+router.get('/createForm', moviesController.createForm);
+
+router.post('/create', moviesController.store);
 
 // router.post('/delete/:id', moviesController.delete);
 

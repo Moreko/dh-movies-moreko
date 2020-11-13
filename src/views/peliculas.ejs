@@ -18,15 +18,20 @@
       <br>
       <p>Listado completo de películas</p>
       <p>¡Hace click en el título para ir al detalle!</p>
-
+      <br>
     <ul> 
       <% peliculas.forEach(pelicula => { %>
       <a href="/peliculas/<%= pelicula.id %>"><li>· <%= pelicula.title %></a></li>
        <% }) %>
     </ul>
 
-    <a href="/">Volver al inicio</a>
+    <br>
+    <a href="/peliculas/createForm">Crear Nueva Pelicula</a>
+    <br>
 
+    <br>
+    <a href="/">Volver al inicio</a>
+    <br>
     </main>
 
 

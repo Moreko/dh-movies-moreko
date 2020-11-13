@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH Movies Juan Moreno</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+  </head>
+
+  <body>
+
+    <section  class="contenedorApp">
+      <%-include('./partials/header.ejs')%>
+
+     <main class="contenedorMain">
+
+      <br>
+
+      <form action="/peliculas/create" method="POST" class="createForm">
+        <label for="title">Título:
+          <input type="text" name="title" id="title" class="inputCreateForm">
+        </label>
+        <label for="rating">Rating:
+          <input type="text" name="rating" id="rating" class="inputCreateForm">
+        </label>
+        <label for="awards">Premios: 
+          <input type="text" name="awards" id="awards" class="inputCreateForm">
+        </label>
+        <label for="release_date">Fecha de estreno:
+          <input type="date" name="release_date" id="release_date" class="inputCreateForm">
+        </label>
+        <label for="length">Duración:
+          <input type="text" name="length" id="length" class="inputCreateForm">
+        </label>
+        <label for="genre">Género:
+          <select id="genre" name="genre_id" class="inputCreateForm">
+            <% generos.forEach(genero => { %>
+              <option value=<%= genero.id %>><%= genero.name %> </option>
+            <% }) %>
+          </select>
+        </label>
+        <button type="submit" class="botonEnviarCreate">Enviar</button>
+      </form>
+
+    <br>
+    <a href="/">Volver al inicio</a>
+    <br>
+    </main>
+
+
+    <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>
