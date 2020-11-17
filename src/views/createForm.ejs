@@ -40,6 +40,13 @@
             <% }) %>
           </select>
         </label>
+        <label for="actores">Actores:
+          <select multiple id="actores" name="actores" class="inputCreateForm">
+            <% actores.forEach(actor => { %>
+              <option value=<%= actor.id %>><%= actor.first_name + " " %><%= actor.last_name %> </option>
+            <% }) %>
+          </select>
+        </label>
         <button type="submit" class="botonEnviarCreate">Enviar</button>
       </form>
 

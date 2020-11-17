@@ -9,7 +9,6 @@ module.exports = {
     list: (req, res, next) => {
         db.Movie.findAll({include:{all:true}})
          .then(function(peliculas){
-            //  res.send(peliculas)
           res.render('peliculas', {peliculas});
          }).catch(function(error) {
           res.render("error", {message: error})
@@ -60,14 +59,16 @@ module.exports = {
      })
     },
 
-    createForm: async (req,res,next) => {
+    createForm: async (req,res) => {
         const generos = await Genre.findAll();
-        res.render("createForm", {generos})
+        const actores = await Actor.findAll();
+        res.render("createForm", {generos, actores})
     },
 
     store: async (req,res,next) => {
         const newMovie = await Movie.create(req.body)
-        res.render("creacionExitosa")
-    },
+        let peliculas = await Movie.findAll();
+        res.render("creacionExitosa", {peliculas, newMovie})
+    } 
 
 }

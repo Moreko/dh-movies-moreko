@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH Movies Juan Moreno</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+  </head>
+
+  <body>
+
+    <section  class="contenedorApp">
+      <%-include('./partials/header.ejs')%>
+
+     <main class="contenedorMain">
+
+      <br>
+      <p>Creaste la pelicula "<%= newMovie.title %>" </p>
+      <p>Ya está disponible en nuestro catálogo</p>
+      <br>
+    <ul> 
+      <% peliculas.forEach(pelicula => { %>
+      <a href="/peliculas/<%= pelicula.id %>"><li>· <%= pelicula.title %></a></li>
+       <% }) %>
+    </ul>
+
+    <br>
+    <a href="/peliculas/createForm">Crear Nueva Pelicula</a>
+    <br>
+
+    <br>
+    <a href="/">Volver al inicio</a>
+    <br>
+    </main>
+
+
+    <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>

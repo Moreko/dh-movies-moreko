@@ -78,6 +78,10 @@ li {
   font-family: "Monospace";
 }
 
+select {
+  color:black;
+}
+
 .createForm {
   width: 50vh;
   align-items: center;
@@ -89,6 +93,14 @@ li {
   height: 5vh;
   width: 70vh;
   margin-bottom:2vh;
+}
+
+.inputCreateFormActores{
+  width: 70vh;
+}
+
+option {
+  color:black;
 }
 
 .botonEnviarCreate {
