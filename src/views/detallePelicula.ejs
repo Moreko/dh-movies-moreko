@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Detalle NOMBREPELI</title>
+    <title>DH Movies, <%= pelicula.title %> </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
@@ -20,10 +20,30 @@
         <p>Estreno: <%= pelicula.release_date %> </p>
         <p>Duración: <%= pelicula.length + " minutos"%> </p>
 
-        <br>
-        <a href="/peliculas/editForm/<%= pelicula.id %> ">Editar esta pelicula</a>
-        <br>
-        <a href="/peliculas/delete/<%= pelicula.id %>">Eliminar esta pelicula</a>
+        <% if (pelicula.Genre) { %>
+          <a href="/peliculas/genero/<%= pelicula.Genre.id %> "><p>Género: <%= pelicula.Genre.name %> </p> </a>
+        <% } else { %>
+          <p><em>Esta pelicula no tiene un género asignado</em></p>
+          <% } %> 
+
+       <% if (pelicula.actores.length >= 1) { %>
+          <p>Actuan en esta pelicula:</p>
+            <% pelicula.actores.forEach(actor => { %>
+              <ul>
+                <a href="/peliculas/actor/<%= actor.id %> "><li> · <%= actor.first_name + " " + actor.last_name %> </li></a>
+              </ul>   
+            <% }) %>
+       <% } else { %>
+        <p><em>Esta pelicula no tiene actores asignados</em></p>
+        <% } %> 
+
+          <form method="POST" action="/peliculas/delete/<%= pelicula.id %>">
+            <input class="submit_eliminar" type="submit" value="Eliminar esta pelicula"></button>
+          </form>
+
+          <br>
+          <a href="/peliculas/editForm/<%= pelicula.id %> ">Editar esta pelicula</a>
+          
         <br>
         <a href="/peliculas">Todas las peliculas</a>
         <br>

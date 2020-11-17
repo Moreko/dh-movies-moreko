@@ -16,20 +16,14 @@
      <main class="contenedorMain">
 
       <br>
-      <p>Borraste exitosamente la pelicula "<%= newMovie.title %>" </p>
+      <p>Borraste exitosamente la pelicula seleccionada! </p>
       <p>Ya no se encuentra en nuestro catálogo</p>
       <br>
-    <ul> 
-      <% peliculas.forEach(pelicula => { %>
-      <a href="/peliculas/<%= pelicula.id %>"><li>· <%= pelicula.title %></a></li>
-       <% }) %>
-    </ul>
 
     <br>
     <a href="/peliculas/createForm">Crear Nueva Pelicula</a>
     <br>
     <a href="/peliculas">Todas las peliculas</a>
-    <br>
     <br>
     <a href="/">Volver al inicio</a>
     <br>

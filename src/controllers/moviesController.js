@@ -16,10 +16,21 @@ module.exports = {
       },
 
     detail: (req, res, next) => {
-        db.Movie.findByPk(req.params.id)
+        db.Movie.findByPk(req.params.id, {include:{all:true}})
             .then(function(pelicula) {
                 res.render("detallePelicula", {pelicula})
      })
+    },
+
+    detalleGenero: async (req, res, next) => {
+        let generoElejido = await Genre.findByPk(req.params.id, {include:{all:true}})
+        res.render("detalleGenero", {generoElejido})
+    },
+
+    detalleActor: async (req, res, next) => {
+        let actorElejido = await Actor.findByPk(req.params.id, {include:{all:true}})
+        // res.send(actorElejido)
+        res.render("detalleActor", {actorElejido})
     },
 
     new: (req, res, next) => {
@@ -90,11 +101,12 @@ module.exports = {
 
     delete: async (req,res,next) => {
         let peliculaParaBorrar = await Movie.findByPk(req.params.id, {include:{all:true}})
-        await peliculaParaBorrar.destroy({
+        await peliculaParaBorrar.removeActores(peliculaParaBorrar.actores)
+        await Movie.destroy({
             where: {
                 id: req.params.id
             }
         })
-        res.render("borradoExitoso", {peliculaParaBorrar})
+        res.render("borradoExitoso")
     }
 }

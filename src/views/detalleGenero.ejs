@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DH Movies, <%= generoElejido.name %> </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+
+    <section  class="contenedorApp">
+     <%-include('./partials/header.ejs')%>
+
+     <main class="contenedorMain">
+        
+       <br>
+        <h1><%= generoElejido.name %> </h1>
+        <br>
+        <p>Este género tiene las siguientes peliculas asignadas:</p>
+        <br>
+            <% generoElejido.Movies.forEach(pelicula => { %>
+                <a href="/peliculas/<%= pelicula.id %> "><p><%= pelicula.title %> </p></a>
+            <% }) %>
+        
+          
+        <br>
+        <a href="/peliculas">Todas las peliculas</a>
+        <br>
+        <a href="/">Volver al inicio</a>
+        <br>
+
+
+      </main>
+
+  <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>
