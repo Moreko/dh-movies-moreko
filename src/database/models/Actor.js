@@ -9,9 +9,12 @@ module.exports = (sequelize, DataTypes) => {
         favorite_movie_id: DataTypes.INTEGER
     })
 
-    // Actores.associate = models=>{
-    //     Actores.belongsToMany(models.Movie);
-    // }
+    Actores.associate = models=>{
+        Actores.belongsToMany(models.Movie, {
+            through: "actor_movie",
+            as:"peliculas"
+        });
+    }
 
     return Actores
 }

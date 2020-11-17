@@ -12,13 +12,23 @@
 
      <main class="contenedorMain">
         
+       <br>
         <h1><%= pelicula.title %> </h1>
+        <br>
         <p>Rating: <%= pelicula.rating %> </p>
         <p>Awards: <%= pelicula.awards %> </p>
         <p>Estreno: <%= pelicula.release_date %> </p>
-        <p>Duración: <%= pelicula.length %> </p>
+        <p>Duración: <%= pelicula.length + " minutos"%> </p>
 
+        <br>
+        <a href="/peliculas/editForm/<%= pelicula.id %> ">Editar esta pelicula</a>
+        <br>
+        <a href="/peliculas/delete/<%= pelicula.id %>">Eliminar esta pelicula</a>
+        <br>
+        <a href="/peliculas">Todas las peliculas</a>
+        <br>
         <a href="/">Volver al inicio</a>
+        <br>
 
 
       </main>

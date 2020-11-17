@@ -15,11 +15,11 @@ router.get('/createForm', moviesController.createForm);
 
 router.post('/create', moviesController.store);
 
-// router.post('/delete/:id', moviesController.delete);
+router.post('/delete/:id', moviesController.delete);
 
-// router.get('/editForm/:id', moviesController.editForm);
+router.get('/editForm/:id', moviesController.editForm);
 
-// router.post('/edit/:id', moviesController.edit);
+router.post('/update/:id', moviesController.update);
 
 router.get('/:id', moviesController.detail);
 

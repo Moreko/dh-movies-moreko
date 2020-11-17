@@ -67,8 +67,34 @@ module.exports = {
 
     store: async (req,res,next) => {
         const newMovie = await Movie.create(req.body)
-        let peliculas = await Movie.findAll();
+        await newMovie.addActores(req.body.actores)
+        let peliculas = await Movie.findAll({include:{all:true}});
         res.render("creacionExitosa", {peliculas, newMovie})
-    } 
+        // res.send(peliculas)
+    },
 
+    editForm: async (req,res,next) => {
+        let peliculaParaEditar = await Movie.findByPk(req.params.id, {include:{all:true}})
+        const generos = await Genre.findAll();
+        const actores = await Actor.findAll();
+        res.render("editForm",{peliculaParaEditar, generos, actores})
+    },
+
+    update: async (req,res,next) => {
+        let peliculaParaEditar = await Movie.findByPk(req.params.id, {include:{all:true}})
+        await peliculaParaEditar.removeActores(peliculaParaEditar.actores)
+        await peliculaParaEditar.addActores(req.body.actores)
+        await peliculaParaEditar.update(req.body)
+        res.render("edicionExitosa", {peliculaParaEditar})
+    },
+
+    delete: async (req,res,next) => {
+        let peliculaParaBorrar = await Movie.findByPk(req.params.id, {include:{all:true}})
+        await peliculaParaBorrar.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render("borradoExitoso", {peliculaParaBorrar})
+    }
 }

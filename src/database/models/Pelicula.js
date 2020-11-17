@@ -12,10 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     })
     Peliculas.associate = models=>{
         Peliculas.belongsTo(models.Genre);
+        Peliculas.belongsToMany(models.Actor, {
+            as:"actores",
+            through:"actor_movie"
+        }); 
+
     }
-    // Peliculas.associate = models=>{
-    //     Peliculas.belongsToMany(models.Actor);
-    // }
+
     
     return Peliculas
 }

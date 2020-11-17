@@ -17,26 +17,30 @@
 
       <br>
 
-      <form action="/peliculas/create" method="POST" class="createForm">
+      <form action="/peliculas/update/<%= peliculaParaEditar.id %> " method="POST" class="createForm">
         <label for="title">Título:
-          <input type="text" name="title" id="title" class="inputCreateForm">
+          <input type="text" name="title" id="title" value="<%= peliculaParaEditar.title %>" class="inputCreateForm">
         </label>
         <label for="rating">Rating:
-          <input type="text" name="rating" id="rating" class="inputCreateForm">
+          <input type="text" name="rating" id="rating" value="<%= peliculaParaEditar.rating %>" class="inputCreateForm">
         </label>
         <label for="awards">Premios: 
-          <input type="text" name="awards" id="awards" class="inputCreateForm">
+          <input type="text" name="awards" id="awards" value="<%= peliculaParaEditar.awards %>" class="inputCreateForm">
         </label>
         <label for="release_date">Fecha de estreno:
-          <input type="date" name="release_date" id="release_date" class="inputCreateForm">
+          <input type="date" name="release_date" id="release_date" value="<%= peliculaParaEditar.release_date %>" class="inputCreateForm">
         </label>
         <label for="length">Duración:
-          <input type="text" name="length" id="length" class="inputCreateForm">
+          <input type="text" name="length" id="length" value="<%= peliculaParaEditar.length %>" class="inputCreateForm">
         </label>
         <label for="genre">Género:
           <select id="genre" name="genre_id" class="inputCreateForm">
             <% generos.forEach(genero => { %>
-              <option value=<%= genero.id %>><%= genero.name %> </option>
+              <% if(peliculaParaEditar.GenreId === genero.id) { %> 
+                 <option value=<%= genero.id %> selected ><%= genero.name %> </option>
+              <% } else { %>
+                <option value=<%= genero.id %>><%= genero.name %> </option>
+                <% } %> 
             <% }) %>
           </select>
         </label>
@@ -44,7 +48,11 @@
           <select multiple id="actores" name="actores" class="inputCreateFormActores
           ">
             <% actores.forEach(actor => { %>
-              <option value=<%= actor.id %>><%= actor.first_name + " " %><%= actor.last_name %> </option>
+                <% if (peliculaParaEditar.actores.some(actorPelicula => actorPelicula.id == actor .id)) { %> 
+                  <option value=<%= actor.id %> selected ><%= actor.first_name + " " %><%= actor.last_name %> </option>
+                <% } else { %> 
+                  <option value=<%= actor.id %>><%= actor.first_name + " " %><%= actor.last_name %> </option>
+                <% } %> 
             <% }) %>
           </select>
         </label>
