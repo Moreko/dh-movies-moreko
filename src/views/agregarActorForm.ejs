@@ -17,17 +17,17 @@
 
       <br>
 
-      <form action="/peliculas/create" method="POST" class="createForm">
-        <label for="movie">Selecciona una pelicula:
-          <select id="movie" name="movie" class="inputCreateForm">
+      <form action="/peliculas/agregarActor" method="POST" class="createForm">
+        <label for="pelicula">Selecciona una pelicula:
+          <select id="pelicula" name="pelicula" class="inputCreateForm">
             <% peliculas.forEach(pelicula => { %>
               <option value=<%= pelicula.id %>><%= pelicula.title %> </option>
             <% }) %>
           </select>
           
         </label>
-        <label for="actores">Selecciona un/a actor/actriz:
-          <select id="actores" name="actores" class="inputCreateFormActores
+        <label for="actor">Selecciona un/a actor/actriz:
+          <select id="actor" name="actor" class="inputCreateFormActores
           ">
             <% actores.forEach(actor => { %>
               <option value=<%= actor.id %>><%= actor.first_name + " " %><%= actor.last_name %> </option>

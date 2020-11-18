@@ -119,7 +119,7 @@ module.exports = {
 
     agregarActor: async (req,res) => {
         // let peliculaElejida = await Movie.findByPk(req.body.id, {include:{all:true}})
-        res.send(req.body.pelicula);
+        res.send(req.body);
     }
 
 
