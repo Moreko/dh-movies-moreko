@@ -18,7 +18,11 @@
         <p>Rating: <%= pelicula.rating %> </p>
         <p>Awards: <%= pelicula.awards %> </p>
         <p>Estreno: <%= pelicula.release_date %> </p>
+        <% if (pelicula.length) { %>
         <p>Duración: <%= pelicula.length + " minutos"%> </p>
+        <% } else { %>
+          <p><em>Esta pelicula no tiene una duración asignado</em></p>
+          <% } %> 
 
         <% if (pelicula.Genre) { %>
           <a href="/peliculas/genero/<%= pelicula.Genre.id %> "><p>Género: <%= pelicula.Genre.name %> </p> </a>

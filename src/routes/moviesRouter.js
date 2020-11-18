@@ -15,6 +15,10 @@ router.get('/createForm', moviesController.createForm);
 
 router.post('/create', moviesController.store);
 
+router.get('/agregarActorForm', moviesController.agregarActorForm);
+
+router.post('/agregarActor', moviesController.agregarActor);
+
 router.get('/editForm/:id', moviesController.editForm);
 
 router.post('/update/:id', moviesController.update);

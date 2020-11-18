@@ -75,6 +75,7 @@ module.exports = {
         const actores = await Actor.findAll();
         res.render("createForm", {generos, actores})
     },
+    
 
     store: async (req,res,next) => {
         const newMovie = await Movie.create(req.body)
@@ -108,5 +109,18 @@ module.exports = {
             }
         })
         res.render("borradoExitoso")
+    },
+
+    agregarActorForm: async (req,res,next) => {
+        let peliculas = await Movie.findAll({include:{all:true}})
+        let actores = await Actor.findAll({include:{all:true}});
+        res.render("agregarActorForm", {peliculas, actores})
+    },
+
+    agregarActor: async (req,res) => {
+        // let peliculaElejida = await Movie.findByPk(req.body.id, {include:{all:true}})
+        res.send(req.body.pelicula);
     }
+
+
 }

@@ -25,6 +25,10 @@ a {
   color: #7ab1c7;
 }
 
+p {
+  padding: 1vh;
+}
+
 li {
   font-size: 1rem;
 }
