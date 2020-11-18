@@ -118,8 +118,9 @@ module.exports = {
     },
 
     agregarActor: async (req,res) => {
-        // let peliculaElejida = await Movie.findByPk(req.body.id, {include:{all:true}})
-        res.send(req.body);
+        let peliculaParaEditar = await Movie.findByPk(req.body.pelicula, {include:{all:true}})
+        await peliculaParaEditar.addActores(req.body.actor)
+        res.render("actuacionAgregadaExitosamente", {peliculaParaEditar});
     }
 
 

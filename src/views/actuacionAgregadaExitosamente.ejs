@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalle NOMBREPELI</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+
+    <section  class="contenedorApp">
+     <%-include('./partials/header.ejs')%>
+
+     <main class="contenedorMain">
+
+         <br>
+      <p>Agregaste una actuación a la pelicula "<%= peliculaParaEditar.title %>" exitosamente!</p>
+      <p>Ya se encuentra actualizada en nuestro catálogo</p>
+
+        <br>
+        <a href="/peliculas">Todas las peliculas</a>
+        <br>
+        <a href="/">Volver al inicio</a>
+        <br>
+
+
+      </main>
+
+  <%-include('./partials/footer.ejs')%>
+  </section>
+
+  </body>
+</html>
