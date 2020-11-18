@@ -15,6 +15,7 @@
     <main class="contenedorMain">
       
     <ul> 
+      <br>
         <% recomendadas.forEach(pelicula => { %>
         <a href="/peliculas/<%= pelicula.id %>"><li><%= pelicula.title %></a></li>
         <li>Rating: <%= pelicula.rating %>  </li>
